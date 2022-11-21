@@ -29,6 +29,11 @@ Select Products.ProductId, Products.ProductName, Products.Price, Categories.Cate
  
 --DTO Data Trabsformation Object
  
-Select * from Products p left join OrderDetails od on p.ProductId = od.ProductId
+ Select * from Products p left join OrderDetails od
+ on p.ProductId = od.ProductId
+ inner join Orders o
+ on o.OrderId = od.OrderId
  
-Select * from Customers c left join Orders o on c.CustomerId = o.CustomerId where o.CustomerId is null
+Select * from Customers c left join Orders o
+on c.CustomerId = o.CustomerId
+where o.CustomerId is null
