@@ -25,7 +25,10 @@ Select count(*) Adet from Products where CategoryId=2
 Select CategoryId, count(*) from Products group by CategoryId
 Select CategoryId, count(*) from Products where Price>20 group by CategoryId having count(*)<10
  
-Select Products.ProductId, Products.ProductName, Products.Price, Categories.CategoryName  from Products inner join Categories on Products.CategoryId = Categories.CategoryId where Products.Price>10
+Select Products.ProductId, Products.ProductName, Products.Price, Categories.CategoryName
+from Products inner join Categories
+on Products.CategoryId = Categories.CategoryId
+where Products.Price>10
  
 --DTO Data Trabsformation Object
  
