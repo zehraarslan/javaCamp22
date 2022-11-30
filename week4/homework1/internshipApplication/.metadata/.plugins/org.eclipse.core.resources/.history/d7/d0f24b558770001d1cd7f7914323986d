@@ -1,0 +1,32 @@
+package kodlama.io.application.webApi.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import kodlama.io.application.business.abstracts.InternService;
+import kodlama.io.application.business.abstracts.ProjectLanguageService;
+import kodlama.io.application.entities.concretes.Intern;
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+
+@RestController
+@RequestMapping("/api")
+public class Controller {
+	
+	private InternService internService;
+	private ProjectLanguageService projectLanguageService;
+	
+	
+	public Controller(InternService internService, ProjectLanguageService projectLanguageService) {
+		this.internService = internService;
+		this.projectLanguageService = projectLanguageService;
+	}
+	
+
+	public 
+	
+	
+}

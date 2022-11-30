@@ -1,0 +1,58 @@
+package kodlama.io.application.business.concretes;
+
+import java.util.List;
+
+import kodlama.io.application.business.abstracts.ProjectLanguageService;
+import kodlama.io.application.dataAccess.abstracts.ProjectLanguageRepository;
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+public class ProjectLanguageManager implements ProjectLanguageService{
+	
+	private ProjectLanguageRepository projectLanguageRepository;
+	private List<ProjectLanguage> projectLanguages;
+	
+	
+	
+	public ProjectLanguageManager(ProjectLanguageRepository projectLanguageRepository,
+			List<ProjectLanguage> projectLanguages) {
+		this.projectLanguageRepository = projectLanguageRepository;
+		this.projectLanguages = projectLanguages;
+	}
+
+	@Override
+	public void add(ProjectLanguage projectLanguage) throws Exception {
+		if (projectLanguage.getLanguageName().isEmpty()) {
+			throw new Exception("Program dili boş bırakılmış.");
+		}
+		for (ProjectLanguage _projectLanguage : projectLanguages) {
+			if(_projectLanguage.getLanguageName().equalsIgnoreCase(projectLanguage.getLanguageName())) {
+				throw new Exception("Program dili zaten var.");
+			}
+		}
+	}
+
+	@Override
+	public void delete(ProjectLanguage projectLanguage) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(ProjectLanguage projectLanguage) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<ProjectLanguage> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProjectLanguage getId(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

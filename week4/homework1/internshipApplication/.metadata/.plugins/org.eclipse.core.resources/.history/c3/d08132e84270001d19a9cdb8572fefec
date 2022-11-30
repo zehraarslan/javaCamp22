@@ -1,0 +1,10 @@
+package kodlama.io.application.dataAccess.concretes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import kodlama.io.application.entities.concretes.Intern;
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+public class Memory {
+}

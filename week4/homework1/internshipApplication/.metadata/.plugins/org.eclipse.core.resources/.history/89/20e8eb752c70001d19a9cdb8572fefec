@@ -1,0 +1,5 @@
+package kodlama.io.application.dataAccess.concretes;
+
+public class Memory {
+
+}

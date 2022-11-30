@@ -1,0 +1,84 @@
+package kodlama.io.application.business.concretes;
+
+import java.util.List;
+
+import kodlama.io.application.business.abstracts.InternService;
+import kodlama.io.application.dataAccess.abstracts.InternRepository;
+import kodlama.io.application.entities.concretes.Intern;
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+public class InterManager implements InternService{
+	
+	private InternService internService;
+	private List<Intern> interns;
+	private List<ProjectLanguage> projectLanguages;
+	
+	public InterManager(InternRepository internRepository, List<Intern> interns,
+			List<ProjectLanguage> projectLanguages) {
+		this.interns = interns;
+		this.projectLanguages = projectLanguages;
+	}
+
+
+	@Override
+	public void add(Intern intern) throws Exception {
+		boolean control;
+		
+		if(intern.getFirstName().isEmpty() || intern.getLastName().isEmpty() || intern.getProjectName().isEmpty()) {
+			throw new Exception("Bilgiler eksil girildi.");
+		}
+		control = languageControl(intern.getLanguageId());
+		if(control) {
+			internService.add(intern);
+		}
+		else {
+			System.out.println("Programlama dili yanlış seçilmiş.");
+		}
+	}
+
+
+	@Override
+	public void delete(Intern intern) {
+		for (Intern _intern : interns) {
+			if(_intern.getId() == intern.getId()) {
+				internService.delete(intern);
+			}
+		}		
+	}
+
+
+	@Override
+	public void updateIntern(Intern oldIntern, Intern intern) {
+		for (Intern _intern : interns) {
+			if(_intern.getId() == intern.getId()) {
+				internService.updateIntern(oldIntern, intern);
+			}
+		}
+	}
+
+
+	@Override
+	public List<Intern> getAll() {
+		return interns;
+	}
+
+
+	@Override
+	public Intern getId(int id) {
+		for (Intern _intern : interns) {
+			if(_intern.getId() == id) {
+				return _intern;
+			}
+		}
+		return null;
+	}
+	
+	public boolean languageControl(int id) {
+		for (ProjectLanguage language : projectLanguages) {
+			if(language.getLanguageId() == id) {
+				return true;
+			}
+		}
+		return false;
+	}
+}

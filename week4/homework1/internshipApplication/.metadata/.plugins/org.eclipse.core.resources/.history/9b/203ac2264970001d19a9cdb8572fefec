@@ -1,0 +1,32 @@
+package kodlama.io.application.business.concretes;
+
+import java.util.List;
+
+import kodlama.io.application.business.abstracts.InternService;
+import kodlama.io.application.dataAccess.abstracts.InternRepository;
+import kodlama.io.application.entities.concretes.Intern;
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+public class InterManager {
+	
+	private List<Intern> interns;
+	private List<ProjectLanguage> projectLanguages;
+	
+	public InterManager(InternRepository internRepository, List<Intern> interns,
+			List<ProjectLanguage> projectLanguages) {
+		this.interns = interns;
+		this.projectLanguages = projectLanguages;
+	}
+
+	
+	public boolean languageControl(int id) {
+		for (ProjectLanguage language : projectLanguages) {
+			if(language.getLanguageId() == id) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	
+}

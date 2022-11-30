@@ -1,0 +1,13 @@
+ package kodlama.io.application.dataAccess.abstracts;
+
+import java.util.List;
+
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+public interface ProjectLanguageRepository {
+	List<ProjectLanguage> add(ProjectLanguage projectLanguage);
+	List<ProjectLanguage> delete(ProjectLanguage projectLanguag);
+	List<ProjectLanguage> update(ProjectLanguage projectLanguag);
+	List<ProjectLanguage> getAll(ProjectLanguage projectLanguag);
+	ProjectLanguage getId(ProjectLanguage projectLanguag);
+}

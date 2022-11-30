@@ -1,0 +1,15 @@
+package kodlama.io.application.webApi.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import kodlama.io.application.entities.concretes.Intern;
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+public class Controller {
+	
+	List<Intern> interns = new ArrayList<Intern>();
+	List<ProjectLanguage> projectLanguages = new ArrayList<ProjectLanguage>();
+	
+	
+}

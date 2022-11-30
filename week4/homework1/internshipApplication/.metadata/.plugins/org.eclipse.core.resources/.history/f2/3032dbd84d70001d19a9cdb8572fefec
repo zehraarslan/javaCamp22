@@ -1,0 +1,34 @@
+package kodlama.io.application.webApi.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import kodlama.io.application.business.abstracts.InternService;
+import kodlama.io.application.business.abstracts.ProjectLanguageService;
+import kodlama.io.application.entities.concretes.Intern;
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+public class Controller {
+	
+	List<Intern> interns = new ArrayList<Intern>();
+	List<ProjectLanguage> projectLanguages = new ArrayList<ProjectLanguage>();
+	private InternService internService;
+	private ProjectLanguageService projectLanguageService;
+	
+	
+	public Controller(InternService internService, ProjectLanguageService projectLanguageService) {
+		this.internService = internService;
+		this.projectLanguageService = projectLanguageService;
+	}
+	
+	
+	ProjectLanguage language1 = new ProjectLanguage(1, "Java");
+	ProjectLanguage language2 = new ProjectLanguage(2, "C#");
+	ProjectLanguage language3 = new ProjectLanguage(3, "C++");
+	ProjectLanguage language4 = new ProjectLanguage(4, "Python");
+	
+	Intern intern1 =new Intern(1, "Zehra", "ARSLAN", "Staj Başvuru Programı", 1);
+	Intern intern2 =new Intern(2, "Tarık", "Yıldırım", "Oyun", 2);
+	Intern intern3 =new Intern(3, "Akın", "Sır", "Minishell", 3);
+	
+}

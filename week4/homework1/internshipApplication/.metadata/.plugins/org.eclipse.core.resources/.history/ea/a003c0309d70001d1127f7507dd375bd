@@ -1,0 +1,67 @@
+package kodlama.io.application.dataAccess.concretes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import kodlama.io.application.dataAccess.abstracts.InternRepository;
+import kodlama.io.application.dataAccess.abstracts.ProjectLanguageRepository;
+import kodlama.io.application.entities.concretes.Intern;
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+@Repository
+public class InMemoryRepository implements InternRepository, ProjectLanguageRepository{
+	
+	private List<Intern> interns = new ArrayList<Intern>();
+	private List<ProjectLanguage> projectLanguages = new ArrayList<ProjectLanguage>();
+	
+	public InMemoryRepository() {
+		
+		projectLanguages.add(new ProjectLanguage(1, "Java"));
+		projectLanguages.add(new ProjectLanguage(2, "C#"));
+		projectLanguages.add(new ProjectLanguage(3, "C++"));
+		projectLanguages.add(new ProjectLanguage(4, "Python"));
+		
+		interns.add(new Intern(1, "Zehra", "ARSLAN", "Staj Başvuru Programı", 1));
+		interns.add(new Intern(2, "Tarık", "Yıldırım", "Oyun", 2));
+		interns.add(new Intern(3, "Akın", "Sır", "Minishell", 3));
+	}
+	
+	
+	@Override
+	public void add(ProjectLanguage projectLanguage) {
+		System.out.println("Proje dili sisteme eklendi : " + projectLanguage.getLanguageName());
+		projectLanguages.add(projectLanguage);
+	}
+	@Override
+	public void delete(ProjectLanguage projectLanguage) {
+		System.out.println("Proje dili sistemden silindi : " + projectLanguage.getLanguageName());
+		projectLanguages.remove(projectLanguage);
+	}
+	
+	public void updateLanguage(ProjectLanguage oldProjectLanguage, ProjectLanguage projectLanguage) {
+		System.out.println("Proje dili sisteme eklendi : " + projectLanguage.getLanguageName());
+		projectLanguages.remove(oldProjectLanguage);
+		projectLanguages.add(projectLanguage);
+	}
+	@Override
+	public void add(Intern intern) {
+		System.out.println("Intern sisteme eklendi : " + intern.getFirstName() + " " +intern.getLastName() + " " + intern.getProjectName() + " " + intern.getLanguageId());
+		interns.add(intern);
+	}
+	@Override
+	public void delete(Intern intern) {
+		System.out.println("Intern sistemden silindi : " + intern.getFirstName() + " " +intern.getLastName() + " " + intern.getProjectName() + " " + intern.getLanguageId());
+		interns.remove(intern);
+	}
+	@Override
+	public void updateIntern(Intern oldIntern, Intern intern) {
+		System.out.println("Intern sisteme eklendi : " + intern.getFirstName() + " " +intern.getLastName() + " " + intern.getProjectName() + " " + intern.getLanguageId());
+		interns.remove(oldIntern);
+		interns.add(intern);
+	}
+
+	
+	
+}

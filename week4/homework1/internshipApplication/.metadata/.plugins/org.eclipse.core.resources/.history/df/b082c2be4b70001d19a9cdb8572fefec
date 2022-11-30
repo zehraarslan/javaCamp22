@@ -1,0 +1,11 @@
+package kodlama.io.application.dataAccess.abstracts;
+
+import kodlama.io.application.entities.concretes.Intern;
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+public interface InternRepository {
+	void add(Intern intern);
+	void delete(Intern intern);
+	void update(Intern oldIntern,Intern intern);
+	
+}

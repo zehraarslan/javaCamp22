@@ -1,0 +1,5 @@
+package kodlama.io.application.business.concretes;
+
+public class InterManager {
+
+}

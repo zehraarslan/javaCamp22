@@ -1,0 +1,12 @@
+package kodlama.io.application.dataAccess.abstracts;
+
+import java.util.List;
+
+import kodlama.io.application.entities.concretes.Intern;
+
+public interface InternRepository {
+	void add(Intern intern);
+	void delete(Intern intern);
+	void update(Intern intern);
+	
+}

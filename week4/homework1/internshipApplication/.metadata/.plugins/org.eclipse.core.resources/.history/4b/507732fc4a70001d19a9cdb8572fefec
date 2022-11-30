@@ -1,0 +1,10 @@
+package kodlama.io.application.webApi.controllers;
+
+import kodlama.io.application.business.abstracts.ProjectLanguageService;
+
+public class ProjectLanguagesController {
+	
+	private ProjectLanguageService projectLanguageService;
+	
+	
+}

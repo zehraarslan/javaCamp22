@@ -1,0 +1,76 @@
+package kodlama.io.application.dataAccess.concretes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import kodlama.io.application.dataAccess.abstracts.InternRepository;
+import kodlama.io.application.dataAccess.abstracts.ProjectLanguageRepository;
+import kodlama.io.application.entities.concretes.Intern;
+import kodlama.io.application.entities.concretes.ProjectLanguage;
+
+public class InMemoryRepository implements InternRepository, ProjectLanguageRepository{
+	
+	private List<Intern> interns = new ArrayList<Intern>();
+	
+	
+	@Override
+	public void add(ProjectLanguage projectLanguage) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(ProjectLanguage projectLanguage) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(ProjectLanguage projectLanguage) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<ProjectLanguage> getLanguageAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProjectLanguage getLanguageId(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(Intern intern) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Intern intern) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Intern intern) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Intern> getInternAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Intern getInternId(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

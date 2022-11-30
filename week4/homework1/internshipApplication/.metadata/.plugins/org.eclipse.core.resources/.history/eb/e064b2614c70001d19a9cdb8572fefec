@@ -1,0 +1,5 @@
+package kodlama.io.application.webApi.controllers;
+
+public class Controller {
+
+}
