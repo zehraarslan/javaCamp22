@@ -1,0 +1,9 @@
+package kodlama.io.rentACar.entities.concretes;
+
+import javax.persistence.Table;
+
+@Table(name="brands")
+public class Brand {
+	private int id;
+	private String name;	
+}
